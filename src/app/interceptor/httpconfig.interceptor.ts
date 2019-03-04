@@ -12,10 +12,11 @@ import {
 
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
-  //constructor(public errorDialogService: ErrorDialogService) { }
+  constructor(public authenticationService: AuthenticationService) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
           let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -43,13 +44,13 @@ export class HttpConfigInterceptor implements HttpInterceptor {
                   return event;
               }),
               catchError((error: HttpErrorResponse) => {
-                let data = {};
-                data = {
-                    reason: error && error.error.reason ? error.error.reason : '',
-                    status: error.status
-                };
-                //this.errorDialogService.openDialog(data);
-                return throwError(error);
+                if (error.status === 401) {
+                    // auto logout if 401 response returned from api
+                    this.authenticationService.logout();
+                    location.reload(true);
+                }
+                const err = error.error.message || error.statusText;
+                return throwError(err);
               })
             );
       }
