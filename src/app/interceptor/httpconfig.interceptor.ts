@@ -17,16 +17,12 @@ import { map, catchError } from 'rxjs/operators';
 export class HttpConfigInterceptor implements HttpInterceptor {
   //constructor(public errorDialogService: ErrorDialogService) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-          const token: string = localStorage.getItem('token');
-          //to store username and password and retrieve
-          const username = 'wbadmin';
-          const password = 'wbadmin';
-          let authdata = window.btoa(username + ':' + password);
+          let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-          if (authdata) {
+          if (currentUser && currentUser.authdata) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Basic ${authdata}`
+                    Authorization: `Basic ${currentUser.authdata}`
                     //Authorization: "Basic d2JhZG1pbjp3YmFkbWlu"
                 }
             });

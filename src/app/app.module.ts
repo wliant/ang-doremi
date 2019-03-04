@@ -20,15 +20,18 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpModule,
     ComponentsModule,
@@ -41,7 +44,8 @@ import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    LoginComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
