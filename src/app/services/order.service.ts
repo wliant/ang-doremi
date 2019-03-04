@@ -9,9 +9,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class OrderService {
   private ordersUrl = 'http://localhost:8090/rest2/orders';
+
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.ordersUrl);
+    var headers_object = new HttpHeaders();
+    headers_object.append('accept', 'application/json');
+
+    const httpOptions = {
+      headers: headers_object
+    };
+    return this.http.get<Order[]>(this.ordersUrl, httpOptions);
   }
 }

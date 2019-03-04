@@ -2,7 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
@@ -24,6 +24,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
 
 @NgModule({
   imports: [
@@ -42,7 +43,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AppComponent,
     AdminLayoutComponent
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
