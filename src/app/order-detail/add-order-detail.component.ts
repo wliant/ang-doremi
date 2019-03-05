@@ -7,8 +7,8 @@ import { OrderService }  from '../services/order.service';
 
 @Component({
   selector: 'app-add-order-detail',
-  templateUrl: './order-detail.component.html',
-  styleUrls: ['./order-detail.component.scss']
+  templateUrl: './add-order-detail.component.html',
+  styleUrls: ['./add-order-detail.component.scss']
 })
 export class AddOrderDetailComponent implements OnInit {
 

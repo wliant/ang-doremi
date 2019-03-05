@@ -15,7 +15,7 @@ export class OrderListComponent implements OnInit {
   addOrder(): void {
 
   }
-  
+
   getOrders(): void {
     this.orderService.getOrders()
       .subscribe(orders => this.orders = orders);
@@ -23,6 +23,10 @@ export class OrderListComponent implements OnInit {
 
   ngOnInit() {
     this.getOrders();
+  }
+
+  openModal(id: string) {
+
   }
 
 }
