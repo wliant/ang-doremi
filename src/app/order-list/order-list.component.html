@@ -4,25 +4,29 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Simple Table</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+                      <h4 class="card-title ">Order List</h4>
+                      <p class="card-category"></p>
                   </div>
                   <div class="card-body">
+                      <a routerLink="/order-detail/add"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Create New
+                      </a>
+
                       <div class="table-responsive">
                           <table class="table">
                               <thead class=" text-primary">
-                                  <th>ID</th>
-                                  <th>Name</th>
+                                  <th>Order No.</th>
+                                  <th>Order Date</th>
                                   <th></th>
                               </thead>
                               <tbody>
                                   <tr *ngFor="let order of orders">
                                     <td>{{order.id}}</td>
-                                    <td>{{order.name}}</td>
-                                    <td><img (click)="onSelect(order)" class="img" src="./assets/img/view.svg" /></td>
+                                    <td>{{order.orderDate}}</td>
+                                    <td align="right"><a routerLink="/order-detail/{{order.id}}"><img class="img" src="./assets/img/view.svg" /></a></td>
                                   </tr>
                               </tbody>
                           </table>
+
                       </div>
                   </div>
               </div>

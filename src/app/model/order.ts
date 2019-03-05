@@ -1,4 +1,7 @@
+import { Customer } from './customer'
+
 export class Order {
   id: number;
-  name: string;
+  orderDate: string;
+  customer: Customer;
 }

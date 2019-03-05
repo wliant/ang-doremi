@@ -10,12 +10,12 @@ import { Order } from '../model/order';
 export class OrderListComponent implements OnInit {
 
   orders : Order[];
-  selectedOrder : Order;
-  onSelect(order: Order): void {
-    this.selectedOrder = order;
-  }
   constructor(private orderService: OrderService) { }
 
+  addOrder(): void {
+
+  }
+  
   getOrders(): void {
     this.orderService.getOrders()
       .subscribe(orders => this.orders = orders);

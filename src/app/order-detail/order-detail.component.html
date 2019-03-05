@@ -1,9 +1,36 @@
 <div *ngIf="order">
-  <h2>{{order.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{order.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="order.name" placeholder="name">
-    </label>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Order Detail</h4>
+                      <p class="card-category">Subtitle here</p>
+                  </div>
+                  <div class="card-body">
+                      <form>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Order No." [(ngModel)]="order.id" name="id" disabled>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Order Date" [(ngModel)]="order.orderDate" name="orderDate">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-left">Save</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
+</div>
 </div>

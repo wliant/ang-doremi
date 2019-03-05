@@ -1,7 +1,4 @@
-<div class="alert alert-info">
-    Username: test<br />
-    Password: test
-</div>
+<div style="margin: 5%;">
 <h2>Login</h2>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -24,3 +21,4 @@
     </div>
     <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 </form>
+</div>
