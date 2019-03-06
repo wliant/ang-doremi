@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../services/order.service';
 import { Order } from '../model/order';
 import { ModalService } from '../services/modal.service';
+import { KieService } from '../services/kie.service';
 
 @Component({
   selector: 'app-order-list',
@@ -11,13 +12,14 @@ import { ModalService } from '../services/modal.service';
 export class OrderListComponent implements OnInit {
 
   orders : Order[];
-  constructor(private orderService: OrderService, private modalService: ModalService) { }
+  constructor(private orderService: OrderService, private modalService: ModalService, private kieService: KieService) { }
 
   addOrder(): void {
 
   }
 
   getOrders(): void {
+    this.kieService.getTasks();
     this.orderService.getOrders()
       .subscribe(orders => this.orders = orders);
   }

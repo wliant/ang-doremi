@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Task List</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <a routerLink="/order-detail/add"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Create New</a>
+                        <a (click)="openModal('custom-modal-2');"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Open Modal</a>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Subject</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>isSkipable</th>
+                                    <th>Actual Owner</th>
+                                    <th>createdBy</th>
+                                    <th>createdOn</th>
+                                    <th>activationTime</th>
+                                    <th>expirationTime</th>
+                                    <th>procInstId</th>
+                                    <th>procDefId</th>
+                                    <th>containerId</th>
+                                    <th>parentId</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let task of tasks">
+                                        <td>{{task.id}}</td>
+                                        <td>{{task.name}}</td>
+                                        <td>{{task.subject}}</td>
+                                        <td>{{task.description}}</td>
+                                        <td>{{task.status}}</td>
+                                        <td>{{task.priority}}</td>
+                                        <td>{{task.isSkipable}}</td>
+                                        <td>{{task.actualOwner}}</td>
+                                        <td>{{task.createdBy}}</td>
+                                        <td>{{task.createdOn | date:'dd-MM-yyyy'}}</td>
+                                        <td>{{task.activationTime | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+                                        <td>{{task.expirationTime | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+                                        <td>{{task.procInstId}}</td>
+                                        <td>{{task.procDefId}}</td>
+                                        <td>{{task.containerId}}</td>
+                                        <td>{{task.parentId}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <jw-modal id="custom-modal-2">
+      <h1 style="height:1000px">A Tall Custom Modal!</h1>
+      <button (click)="closeModal('custom-modal-2');">Close</button>
+  </jw-modal>
+  
