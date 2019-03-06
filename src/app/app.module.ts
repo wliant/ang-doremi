@@ -28,6 +28,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
 import { LoginComponent } from './login/login.component';
 
+import './modal.component.css';
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
