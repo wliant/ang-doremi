@@ -4,9 +4,27 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+//refer to https://docs.jboss.org/jbpm/release/7.17.0.Final/jbpm-docs/html_single/#_jbpmtasklifecycle
+export const TASK_ACTIONS = {
+  CLAIMED: "claimed",
+  STARTED: "started", 
+  RESUMED: "resumed",
+  STOPPED: "stopped",
+  SUSPENDED: "suspended",
+  SKIPPED: "skipped",
+  DELEGATED: "delegated",
+  RELEASED: "released",
+  FAILED: "failed",
+  COMPLETED: "git",
+  ACTIVATED: "activated",
+  FORWARDED: "forwarded"
+};
+
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+
+const containerId = "DoReMi-kjar_1.0-SNAPSHOT";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +41,17 @@ export class KieService {
             tap(_ => this.log('fetched Tasks')),
             catchError(this.handleError('getTasks'))
         );     
+    }
+
+    getTask(id:number) : Observable<any> {
+        const theUrl = `${this.url}/queries/tasks/instances/${id}`;
+        return this.http.get(theUrl);
+    }
+
+    actOnTask(id:number, action:string) {
+        //eg: action can be TASKACTIONS.CLAIMED
+        const theUrl = `${this.url}/containers/${containerId}/tasks/${id}/states/${action}`;
+        return this.http.put(theUrl, null);
     }
 
       /** Log a HeroService message with the MessageService */
