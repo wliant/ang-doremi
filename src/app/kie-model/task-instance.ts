@@ -12,7 +12,4 @@ export class TaskInstance {
     createdOn: Date;
     activationTime: Date;
     expirationTime: Date;
-    
-
-
 }

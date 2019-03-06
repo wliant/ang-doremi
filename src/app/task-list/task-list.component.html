@@ -16,19 +16,9 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Subject</th>
-                                    <th>Description</th>
                                     <th>Status</th>
-                                    <th>Priority</th>
-                                    <th>isSkipable</th>
-                                    <th>Actual Owner</th>
-                                    <th>createdBy</th>
+                                    <!-- <th>createdBy</th> -->
                                     <th>createdOn</th>
-                                    <th>activationTime</th>
-                                    <th>expirationTime</th>
-                                    <th>procInstId</th>
-                                    <th>procDefId</th>
-                                    <th>containerId</th>
-                                    <th>parentId</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -36,19 +26,10 @@
                                         <td>{{task.id}}</td>
                                         <td>{{task.name}}</td>
                                         <td>{{task.subject}}</td>
-                                        <td>{{task.description}}</td>
                                         <td>{{task.status}}</td>
-                                        <td>{{task.priority}}</td>
-                                        <td>{{task.isSkipable}}</td>
-                                        <td>{{task.actualOwner}}</td>
-                                        <td>{{task.createdBy}}</td>
+                                        <!--<td>{{task.createdBy}}</td>-->
                                         <td>{{task.createdOn | date:'dd-MM-yyyy'}}</td>
-                                        <td>{{task.activationTime | date:'dd-MM-yyyy HH:mm:ss'}}</td>
-                                        <td>{{task.expirationTime | date:'dd-MM-yyyy HH:mm:ss'}}</td>
-                                        <td>{{task.procInstId}}</td>
-                                        <td>{{task.procDefId}}</td>
-                                        <td>{{task.containerId}}</td>
-                                        <td>{{task.parentId}}</td>
+                                        <td><a *ngIf="task.status === 'Ready'" style="cursor: pointer;" (click)="startTask(task.id);"><img src="./assets/img/sharp-work-24px.svg" /></a></td>
                                     </tr>
                                 </tbody>
                             </table>

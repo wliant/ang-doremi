@@ -29,6 +29,7 @@ export class OrderListComponent implements OnInit {
   }
 
   openModal(id: string) {
+    console.log("openModal called");
     this.modalService.open(id);
   }
 
