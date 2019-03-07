@@ -1,4 +1,4 @@
-export class CustomerEvaluation{    
+export class CustomerEvaluation{
     customerID?: number;
     debtPayingAbility?: string;
     defaulter?: boolean;
@@ -10,6 +10,4 @@ export class CustomerEvaluation{
     profitability?: string;
     purchaseFreq?: string;
     yearsActive?: number;
-
- 
 }

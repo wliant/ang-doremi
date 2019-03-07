@@ -45,7 +45,9 @@ export class TaskListComponent implements OnInit {
 
     if(theTask.name == "Customer Evaluation Task") {
       this.router.navigate([`/customer-evaluation/${taskId}`]);
-    }else if(theTask.name == "Supplier Reorder Approval"){
+    }
+
+    if(theTask.name == "Supplier Reorder Approval"){
       this.router.navigate([`/supplier-reorder/${taskId}`]);
     }
 

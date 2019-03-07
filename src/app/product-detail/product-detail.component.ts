@@ -3,6 +3,8 @@ import { Product } from '../model/product';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProductService } from '../services/product.service';
+import { KieService } from '../services/kie.service';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -11,10 +13,12 @@ import { ProductService } from '../services/product.service';
 export class ProductDetailComponent implements OnInit {
 
   @Input() product: Product;
+  instanceId: number;
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private location: Location
+    private kieService: KieService,
+    private location: Location,
   ) { }
 
   ngOnInit() {
@@ -32,7 +36,8 @@ export class ProductDetailComponent implements OnInit {
 
   save(): void {
     console.log(this.product);
-
-      this.productService.updateProduct(this.product).subscribe();
+      this.productService.updateProduct(this .product).subscribe();
+       this.kieService.submitProcess("DoReMi-kjar.InventoryRestockProcess",{"product": {"Product": this.product}})
+      .subscribe(()=> this.goBack());
   }
 }
