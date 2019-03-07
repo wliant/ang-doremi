@@ -8,12 +8,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrderService {
-<<<<<<< HEAD
-  private ordersUrl = 'http://localhost:8090/rest2/orders';
+
   private paidOrdersUrl = 'http://localhost:8090/rest2/paid_orders';
-=======
   private url = 'http://localhost:8090/rest2/orders';
->>>>>>> 5c657e3bc5d8ee4eed47dfb193fb1f227ec546c2
 
   constructor(private http: HttpClient) { }
 
