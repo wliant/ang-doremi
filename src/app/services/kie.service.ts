@@ -48,10 +48,15 @@ export class KieService {
         return this.http.get(theUrl);
     }
 
-    actOnTask(id:number, action:string) {
+    actOnTask(id:number, action:string, data: any = null) : Observable<any> {
         //eg: action can be TASKACTIONS.CLAIMED
         const theUrl = `${this.url}/containers/${containerId}/tasks/${id}/states/${action}`;
-        return this.http.put(theUrl, null);
+        return this.http.put(theUrl, data);
+    }
+
+    submitProcess(id:string, data: any = null) : Observable<any> {
+        const theUrl = `${this.url}/containers/${containerId}/processes/${id}/instances`;
+        return this.http.post(theUrl, data);
     }
 
       /** Log a HeroService message with the MessageService */
