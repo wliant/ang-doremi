@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../model/order';
-import { ORDERS } from '../model/mock-orders';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -9,24 +8,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrderService {
-  private ordersUrl = 'http://localhost:8090/rest2/orders';
+  private url = 'http://localhost:8090/rest2/orders';
 
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Order[]> {
-    var headers_object = new HttpHeaders();
-    headers_object.append('accept', 'application/json');
 
-    const httpOptions = {
-      headers: headers_object
-    };
-    return this.http.get<Order[]>(this.ordersUrl, httpOptions);
+    return this.http.get<Order[]>(this.url)
+    .pipe(
+        map((response: any) => Order.parseList(response)),
+        tap(_ => this.log('fetched Orders')),
+        catchError(this.handleError('Orders', []))
+    );
   }
 
   /** GET hero by id. Will 404 if id not found */
   getOrder(id: number): Observable<Order> {
-    const url = `${this.ordersUrl}/${id}`;
+    const url = `${this.url}/${id}`;
     return this.http.get<Order>(url).pipe(
+      map((response: any) => new Order(response)),
       tap(_ => this.log(`fetched order id=${id}`)),
       catchError(this.handleError<Order>(`getOrder id=${id}`))
     );
