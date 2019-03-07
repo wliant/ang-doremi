@@ -19,7 +19,6 @@ export class OrderListComponent implements OnInit {
   }
 
   getOrders(): void {
-    this.kieService.getTasks();
     this.orderService.getOrders()
       .subscribe(orders => this.orders = orders);
   }

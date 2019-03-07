@@ -8,7 +8,10 @@
                       <p class="card-category"></p>
                   </div>
                   <div class="card-body">
-                      <a routerLink="/add-order-detail"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Create New</a>
+                        <button routerLink="/add-order-detail" mat-button class="btn btn-grey">
+                            <i class="material-icons">add</i>
+                            Create New
+                        </button>
                       <a (click)="openModal('custom-modal-2');"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Open Modal</a>
                       <div class="table-responsive">
                           <table class="table">

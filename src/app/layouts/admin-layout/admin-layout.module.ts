@@ -8,6 +8,7 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { TableListComponent } from '../../table-list/table-list.component';
 import { OrderListComponent } from '../../order-list/order-list.component';
 import { OrderDetailComponent } from '../../order-detail/order-detail.component';
+import { ProductListComponent } from '../../product-list/product-list.component';
 import { TaskListComponent } from '../../task-list/task-list.component';
 import { AddOrderDetailComponent } from '../../order-detail/add-order-detail.component';
 import { TypographyComponent } from '../../typography/typography.component';
@@ -28,6 +29,7 @@ import {
   MatNativeDateModule,
   MAT_DATE_LOCALE 
 } from '@angular/material';
+import { AddProductDetailComponent } from 'src/app/product-detail/add-product-detail.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -59,7 +61,9 @@ import {
     NotificationsComponent,
     UpgradeComponent,
     TaskListComponent,
-    ModalComponent
+    ModalComponent,
+    ProductListComponent,
+    AddProductDetailComponent
   ]
 })
 
