@@ -8,9 +8,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrderService {
+<<<<<<< Updated upstream
 
   private paidOrdersUrl = 'http://localhost:8090/rest2/paid_orders';
   private url = 'http://localhost:8090/rest2/orders';
+=======
+  private ordersUrl = 'http://localhost:8090/rest2/orders';
+  private approvedOrdersUrl = 'http://localhost:8090/rest2/approved_orders';
+>>>>>>> Stashed changes
 
   constructor(private http: HttpClient) { }
 
@@ -24,14 +29,14 @@ export class OrderService {
     );
   }
 
-  getPaidOrders(): Observable<Order[]> {
+  getApprovedOrders(): Observable<Order[]> {
     var headers_object = new HttpHeaders();
     headers_object.append('accept', 'application/json');
 
     const httpOptions = {
       headers: headers_object
     };
-    return this.http.get<Order[]>(this.paidOrdersUrl, httpOptions);
+    return this.http.get<Order[]>(this.approvedOrdersUrl, httpOptions);
   }
 
   /** GET hero by id. Will 404 if id not found */
