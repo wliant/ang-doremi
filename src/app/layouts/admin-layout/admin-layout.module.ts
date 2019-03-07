@@ -7,6 +7,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { OrderListComponent } from '../../order-list/order-list.component';
+import { PaidOrderListComponent } from '../../paid-order-list/paid-order-list.component';
 import { OrderDetailComponent } from '../../order-detail/order-detail.component';
 import { ProductListComponent } from '../../product-list/product-list.component';
 import { TaskListComponent } from '../../task-list/task-list.component';
@@ -53,6 +54,7 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
     UserProfileComponent,
     TableListComponent,
     OrderListComponent,
+    PaidOrderListComponent,
     OrderDetailComponent,
     AddOrderDetailComponent,
     TypographyComponent,

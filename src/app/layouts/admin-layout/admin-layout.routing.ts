@@ -4,6 +4,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { OrderListComponent } from '../../order-list/order-list.component';
+import { PaidOrderListComponent } from '../../paid-order-list/paid-order-list.component';
 import { OrderDetailComponent } from '../../order-detail/order-detail.component';
 import { ProductListComponent } from '../../product-list/product-list.component';
 import { AddOrderDetailComponent } from '../../order-detail/add-order-detail.component';
@@ -62,6 +63,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'order-list',     component: OrderListComponent },
+    { path: 'paid-order-list',     component: PaidOrderListComponent },
     { path: 'order-detail/:id',   component: OrderDetailComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
