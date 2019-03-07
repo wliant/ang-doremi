@@ -8,19 +8,23 @@
                       <p class="card-category"></p>
                   </div>
                   <div class="card-body">
-                      <a routerLink="/order-detail/add"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Create New</a>
+                      <a routerLink="/add-order-detail"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Create New</a>
                       <a (click)="openModal('custom-modal-2');"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Open Modal</a>
                       <div class="table-responsive">
                           <table class="table">
                               <thead class=" text-primary">
                                   <th>Order No.</th>
+                                  <th>Customer</th>
                                   <th>Order Date</th>
+                                  <th>Status</th>
                                   <th></th>
                               </thead>
                               <tbody>
                                   <tr *ngFor="let order of orders">
                                     <td>{{order.id}}</td>
-                                    <td>{{order.orderDate}}</td>
+                                    <td><span *ngIf="order.customer">{{order.customer.name}}</span></td>
+                                    <td>{{order.orderDate | date:'dd-MM-yyyy'}}</td>
+                                    <td>{{order.status}}</td>
                                     <td align="right"><a routerLink="/order-detail/{{order.id}}"><img class="img" src="./assets/img/view.svg" /></a></td>
                                   </tr>
                               </tbody>

@@ -20,7 +20,9 @@
                               </div>
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Order Date" [(ngModel)]="order.orderDate" name="orderDate">
+                                    <input matInput [matDatepicker]="picker" placeholder="Order Date" [(ngModel)]="order.orderDate" name="orderDate" disabled>
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
                                   </mat-form-field>
                               </div>
                           </div>

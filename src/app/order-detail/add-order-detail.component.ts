@@ -11,13 +11,13 @@ import { OrderService }  from '../services/order.service';
   styleUrls: ['./add-order-detail.component.scss']
 })
 export class AddOrderDetailComponent implements OnInit {
-
+  @Input() order: Order = new Order({});
   constructor(
 
   ) { }
 
   ngOnInit() {
-
+    this.order.orderDate = new Date();
   }
 
 

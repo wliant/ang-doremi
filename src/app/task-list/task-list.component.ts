@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskSummary } from '../kie-model/task-summary';
-import { KieService } from '../services/kie.service';
+import { KieService, TASK_ACTIONS } from '../services/kie.service';
+
 
 @Component({
   selector: 'app-task-list',
@@ -18,6 +19,19 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit() {
     this.getTasks();
+  }
+
+  startTask(taskId: number) {
+    console.log("startTaskTrigger");
+    this.kieService.actOnTask(taskId,TASK_ACTIONS.CLAIMED).subscribe(
+        _ => {
+            this.kieService.actOnTask(taskId, TASK_ACTIONS.STARTED).subscribe(
+                _ => {
+                    this.getTasks();
+                }
+            )
+        }
+    );
   }
 
 }

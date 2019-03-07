@@ -19,6 +19,7 @@ export class CustomerService {
   getCustomers(): Observable<Customer[]> {
       return this.http.get<Customer[]>(this.url)
             .pipe(
+                map((response: any) => Customer.parseList(response)),
                 tap(_ => this.log('fetched customers')),
                 catchError(this.handleError('getCustomers', []))
             );
@@ -28,6 +29,7 @@ export class CustomerService {
   getCustomer(id: number): Observable<Customer> {
     const url = `${this.url}/${id}`;
     return this.http.get<Customer>(url).pipe(
+      map((response: any) => new Customer(response)),
       tap(_ => this.log(`fetched customer id=${id}`)),
       catchError(this.handleError<Customer>(`getCustomer id=${id}`))
     );
