@@ -66,6 +66,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'order-detail/add', component: AddOrderDetailComponent },
+    { path: 'add-order-detail', component: AddOrderDetailComponent },
     { path: 'task-list', component: TaskListComponent }
 ];

@@ -25,7 +25,8 @@ import {
   MatTooltipModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MAT_DATE_LOCALE 
 } from '@angular/material';
 @NgModule({
   imports: [
@@ -41,6 +42,9 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
   ],
   declarations: [
     DashboardComponent,
