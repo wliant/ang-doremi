@@ -10,6 +10,7 @@ import { OrderListComponent } from '../../order-list/order-list.component';
 import { ApprovedOrderListComponent } from '../../approved-order-list/approved-order-list.component';
 import { OrderDetailComponent } from '../../order-detail/order-detail.component';
 import { ProductListComponent } from '../../product-list/product-list.component';
+import { ProductDetailComponent } from '../../product-detail/product-detail.component';
 import { TaskListComponent } from '../../task-list/task-list.component';
 import { AddOrderDetailComponent } from '../../order-detail/add-order-detail.component';
 import { TypographyComponent } from '../../typography/typography.component';
@@ -65,7 +66,8 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
     TaskListComponent,
     ModalComponent,
     ProductListComponent,
-    AddProductDetailComponent
+    AddProductDetailComponent,
+    ProductDetailComponent
   ]
 })
 

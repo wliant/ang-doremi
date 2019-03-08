@@ -1,0 +1,52 @@
+<div *ngIf="product">
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Product Detail</h4>
+                      <p class="card-category">Subtitle here</p>
+                  </div>
+                  <div class="card-body">
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Product No." [(ngModel)]="product.id" name="id" disabled>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Product Demand" [(ngModel)]="product.productDemand" name="productDemand">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Service Level" [(ngModel)]="product.serviceLevel" name="serviceLevel">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Supplier Lead Time" [(ngModel)]="product.supplierLeadTime" name="supplierLeadTime">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Stock Level" [(ngModel)]="product.stockLevel" name="stockLevel">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <button mat-raised-button (click)="save()"class="btn btn-danger pull-left">Save</button>
+                                  <button mat-raised-button (click)="goBack()"class="btn btn-danger pull-left">Back</button>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>

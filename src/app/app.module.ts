@@ -16,6 +16,7 @@ import { TableListComponent } from './table-list/table-list.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { ApprovedOrderListComponent } from './approved-order-list/approved-order-list.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';

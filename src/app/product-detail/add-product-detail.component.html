@@ -49,6 +49,34 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Product Demand" [(ngModel)]="product.productDemond">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Service Level" [(ngModel)]="product.serviceLevel">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="SupplierLeadTime" [(ngModel)]="product.supplierLeadTime">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Stock Level" [(ngModel)]="product.stockLevel">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
                                     <button mat-raised-button (click)="save()"class="btn btn-danger pull-left">Save</button>
                                     <button mat-raised-button (click)="goBack()"class="btn btn-danger pull-left">Back</button>
                                 </div>
@@ -60,4 +88,3 @@
             </div>
         </div>
       </div>
-      

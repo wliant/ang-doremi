@@ -5,7 +5,12 @@ export class Product {
     productAuthor: string;
     yearOfPublication: number;
     publisher: string;
+    availableInventory: number;
     unitPrice: number;
+    productDemand: string;
+    serviceLevel: string;
+    supplierLeadTime: string;
+    stockLevel: string;
 
 
     constructor(prod: any) {
@@ -16,6 +21,22 @@ export class Product {
         this.yearOfPublication = prod.yearOfPublication;
         this.publisher = prod.publisher;
         this.unitPrice = prod.unitPrice;
+        this.productDemand = prod.productDemand;
+        this.serviceLevel = prod.serviceLevel;
+        this.supplierLeadTime = prod.supplierLeadTime;
+        this.stockLevel = prod.stockLevel;
+        this.availableInventory = prod.availableInventory;
+
+    }
+
+    static parseList(ords: any) : Product[] {
+      let result : Product[] = [];
+
+      for(let ord of ords) {
+        result.push(new Product(ord));
+      }
+
+      return result;
 
     }
 
