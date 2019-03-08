@@ -3,6 +3,7 @@ import { Order } from '../model/order';
 import { Customer } from '../model/customer';
 import { Product } from '../model/Product';
 import { ActivatedRoute } from '@angular/router';
+import { KieService } from '../services/kie.service';
 import { Location } from '@angular/common';
 import { OrderService }  from '../services/order.service';
 import { CustomerService } from '../services/customer.service';
@@ -27,7 +28,8 @@ export class AddOrderDetailComponent implements OnInit {
     private orderService: OrderService, 
     private customerService: CustomerService,
     private location: Location,
-    private productService: ProductService
+    private productService: ProductService,
+    private kieService: KieService
   ) { }
 
   ngOnInit() {
@@ -90,7 +92,8 @@ export class AddOrderDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.orderService.addOrder(this.order).subscribe(() => this.goBack());
+    this.kieService.submitProcess("DoReMi-kjar.OrderHandling", {"order": {"Order": this.order}}).subscribe(() => this.goBack());
+    //this.orderService.addOrder(this.order).subscribe(() => this.goBack());
   }
 
   addOrderItem(): void {
