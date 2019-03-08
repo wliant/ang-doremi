@@ -6,6 +6,7 @@ import { TableListComponent } from '../../table-list/table-list.component';
 import { OrderListComponent } from '../../order-list/order-list.component';
 import { ApprovedOrderListComponent } from '../../approved-order-list/approved-order-list.component';
 import { OrderDetailComponent } from '../../order-detail/order-detail.component';
+import { ProductDetailComponent } from '../../product-detail/product-detail.component';
 import { ProductListComponent } from '../../product-list/product-list.component';
 import { AddOrderDetailComponent } from '../../order-detail/add-order-detail.component';
 import { TypographyComponent } from '../../typography/typography.component';
@@ -73,5 +74,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add-order-detail', component: AddOrderDetailComponent },
     { path: 'task-list', component: TaskListComponent },
     { path: 'product-list', component: ProductListComponent },
+    { path: 'product-detail/:id',   component: ProductDetailComponent },
     { path: 'add-product-detail', component: AddProductDetailComponent }
 ];

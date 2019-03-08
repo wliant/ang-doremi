@@ -39,6 +39,8 @@
                                         <th>Pulished Year</th>
                                         <th>Publisher</th>
                                         <th>Price</th>
+                                        <th>Available Inventory</th>
+                                        <th></th>
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let product of products">
@@ -49,10 +51,12 @@
                                             <td>{{product.yearOfPublication}}</td>
                                             <td>{{product.publisher}}</td>
                                             <td>{{product.unitPrice | number}}</td>
+                                            <td>{{product.availableInventory}}</td>
+                                            <td align="right"><a routerLink="/product-detail/{{product.id}}"><img class="img" src="./assets/img/view.svg" /></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
-      
+
                             </div>
                         </div>
                     </div>

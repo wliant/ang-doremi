@@ -38,7 +38,7 @@ export class ProductService {
   updateProduct (product: Product): Observable<any> {
     return this.http.put(this.url, product, httpOptions).pipe(
       map((response: any) => new Product(response)),
-      tap(_ => this.log(`updated product id=${product.id}`)),
+      tap(() => this.log(`updated product id=${product.id}`)),
       catchError(this.handleError<any>('updateProduct'))
     );
   }
@@ -46,7 +46,7 @@ export class ProductService {
   addProduct(product: Product): Observable<Product> {
       return this.http.post<Product>(this.url, product, httpOptions).pipe(
         map((response: any) => new Product(response)),
-          tap((newProduct: Product) => this.log(`added Customer w/ id=${newProduct.id}`)),
+          tap((newProduct: Product) => this.log(`added Product w/ id=${newProduct.id}`)),
           catchError(this.handleError<Product>('addProduct'))
       );
   }
