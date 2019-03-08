@@ -21,11 +21,23 @@ export class Order {
       this.customer = new Customer(ord.customer);
     }
     this.orderItems = OrderItem.parseList(ord.orderItems);
+
     this.country = ord.country;
     this.status = ord.status;
-    this.orderValue = ord.orderValue;
-    this.orderDiscount = ord.orderDiscount;
-    this.discountedValue = ord.discountedValue;
+
+    this.orderValue = 0;
+    this.orderDiscount = 0;
+    this.discountedValue = 0;
+
+    if(ord.orderValue) {
+      this.orderValue = ord.orderValue;
+    }
+    if(ord.orderDiscount) {
+      this.orderDiscount = ord.orderDiscount;
+    }
+    if(ord.discountedValue) {
+      this.discountedValue = ord.discountedValuee;
+    }
   } 
 
   static parseList(ords: any) : Order[] {

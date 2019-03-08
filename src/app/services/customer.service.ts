@@ -37,6 +37,7 @@ export class CustomerService {
 
   updateHero (customer: Customer): Observable<any> {
     return this.http.put(this.url, customer, httpOptions).pipe(
+      map((response: any) => new Customer(response)),
       tap(_ => this.log(`updated customer id=${customer.id}`)),
       catchError(this.handleError<any>('updateCustomer'))
     );
@@ -44,6 +45,7 @@ export class CustomerService {
 
   addCustomer(customer: Customer): Observable<Customer> {
       return this.http.post<Customer>(this.url, customer, httpOptions).pipe(
+          map((response: any) => new Customer(response)),
           tap((newCustomer: Customer) => this.log(`added Customer w/ id=${newCustomer.id}`)),
           catchError(this.handleError<Customer>('addCustomer'))
       );

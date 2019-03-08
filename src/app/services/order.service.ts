@@ -4,6 +4,10 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -44,7 +48,13 @@ export class OrderService {
     );
   }
 
-
+  addOrder(order: Order): Observable<Order> {
+    return this.http.post<Order>(this.url, order, httpOptions).pipe(
+        map((response: any) => new Order(response)),
+        tap((newOrder: Order) => this.log(`added Order w/ id=${newOrder.id}`)),
+        catchError(this.handleError<Order>('addOrder'))
+    );
+}
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {

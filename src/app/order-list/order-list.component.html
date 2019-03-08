@@ -28,7 +28,11 @@
                                     <td><span *ngIf="order.customer">{{order.customer.name}}</span></td>
                                     <td>{{order.orderDate | date:'dd-MM-yyyy'}}</td>
                                     <td>{{order.status}}</td>
-                                    <td align="right"><a routerLink="/order-detail/{{order.id}}"><img class="img" src="./assets/img/view.svg" /></a></td>
+                                    <td align="right">
+                                        <button routerLink="/order-detail/{{order.id}}" mat-button class="btn btn-white btn-just-icon">
+                                            <i class="material-icons">zoom_in</i>
+                                        </button>
+                                    </td>
                                   </tr>
                               </tbody>
                           </table>

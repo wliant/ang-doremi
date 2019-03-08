@@ -18,4 +18,12 @@ export class Product {
         this.unitPrice = prod.unitPrice;
 
     }
+
+    static parseList(prods: any) {
+        let result : Product[] = [];
+        for(let prod of prods) {
+            result.push(new Product(prod));
+        }
+        return result;
+    }
 }

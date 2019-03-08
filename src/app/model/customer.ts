@@ -1,19 +1,18 @@
 export class Customer {
-  id: number;
-  isCorporate: boolean;
-  name: string;
+  id?: number;
+  name?: string;
   address?: string;
   dateRegistered?: Date;
+  creditRisk?: string;
 
   constructor(cus: any) {
     this.id = cus.id;
-    this.isCorporate = false;
-    this.isCorporate = cus.isCorporate;
     this.name = cus.name;
     this.address = cus.address;
     if(cus.dateRegistered) {
       this.dateRegistered = new Date(cus.dateRegistered);
     }
+    this.creditRisk = cus.creditRisk;
   }
 
   static parseList(cuss: any) : Customer[] {
