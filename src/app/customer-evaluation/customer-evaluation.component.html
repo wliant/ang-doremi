@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Customer Evaluation</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="card">
+                                  <div class="row">
+                                      <h4 class="card-subheader">Customer</h4>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Name" [(ngModel)]="customer.name" disabled>
+                                        </mat-form-field>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Credit Risk" [(ngModel)]="customer.creditRisk" disabled>
+                                        </mat-form-field>
+                                      </div>
+                                      <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                            <input matInput [matDatepicker]="picker" placeholder="Date Registered" [(ngModel)]="customer.dateRegistered" disabled>
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Address" [(ngModel)]="customer.address" disabled>
+                                        </mat-form-field>
+                                  </div>                                 
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <button mat-raised-button (click)="save();" class="btn btn-danger pull-left">Save</button>
+                              <button mat-raised-button (click)="goBack();" class="btn btn-danger pull-left">Back</button>
+                          </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

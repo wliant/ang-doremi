@@ -19,6 +19,8 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ModalComponent } from '../../modal.component';
+import { CustomerEvaluationComponent } from '../../customer-evaluation/customer-evaluation.component';
+import { OrderApprovalComponent } from '../../order-approval/order-approval.component';
 
 import {
   MatButtonModule,
@@ -67,7 +69,9 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
     ModalComponent,
     ProductListComponent,
     AddProductDetailComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CustomerEvaluationComponent,
+    OrderApprovalComponent
   ]
 })
 

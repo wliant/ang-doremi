@@ -16,6 +16,8 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { TaskListComponent } from '../../task-list/task-list.component';
 import { AddProductDetailComponent } from 'src/app/product-detail/add-product-detail.component';
+import { CustomerEvaluationComponent } from '../../customer-evaluation/customer-evaluation.component';
+import { OrderApprovalComponent } from '../../order-approval/order-approval.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -75,5 +77,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'task-list', component: TaskListComponent },
     { path: 'product-list', component: ProductListComponent },
     { path: 'product-detail/:id',   component: ProductDetailComponent },
-    { path: 'add-product-detail', component: AddProductDetailComponent }
+    { path: 'add-product-detail', component: AddProductDetailComponent },
+    { path: 'customer-evaluation/:id', component: CustomerEvaluationComponent },
+    { path: 'order-approval/:id', component: OrderApprovalComponent }
 ];
