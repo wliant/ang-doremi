@@ -48,6 +48,11 @@ export class KieService {
         return this.http.get(theUrl);
     }
 
+    getTaskInput(id:number): Observable<any> {
+        const theUrl = `${this.url}/containers/${containerId}/tasks/${id}/contents/input`;
+        return this.http.get(theUrl);
+    }
+
     actOnTask(id:number, action:string, data: any = null) : Observable<any> {
         //eg: action can be TASKACTIONS.CLAIMED
         const theUrl = `${this.url}/containers/${containerId}/tasks/${id}/states/${action}`;
