@@ -1,4 +1,5 @@
 import { Customer } from './customer'
+import { OrderItem } from './order-item'
 
 export class Order {
   id?: number;
@@ -8,6 +9,8 @@ export class Order {
   status?: string;
   orderValue?: number;
   orderDiscount?: number;
+  discountedValue?: number;
+  orderItems?: OrderItem[];
 
   constructor(ord: any) { 
     this.id = ord.id;
@@ -17,10 +20,12 @@ export class Order {
     if(ord.customer) {
       this.customer = new Customer(ord.customer);
     }
+    this.orderItems = OrderItem.parseList(ord.orderItems);
     this.country = ord.country;
     this.status = ord.status;
     this.orderValue = ord.orderValue;
     this.orderDiscount = ord.orderDiscount;
+    this.discountedValue = ord.discountedValue;
   } 
 
   static parseList(ords: any) : Order[] {

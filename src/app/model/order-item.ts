@@ -1,7 +1,7 @@
 import { Product } from './product';
 
 export class OrderItem {
-    id: number;
+    id?: number;
     product?: Product;
     quantity?: number;
     value?: number;
@@ -13,6 +13,14 @@ export class OrderItem {
         }
         this.quantity = oi.quantity;
         this.value = oi.value;
+    }
+
+    static parseList(ois: any) {
+        let result : OrderItem[] = [];
+        for(let oi of ois) {
+            result.push(new OrderItem(oi));
+        }
+        return result;
     }
 
 }
