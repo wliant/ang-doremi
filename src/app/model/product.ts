@@ -29,17 +29,6 @@ export class Product {
 
     }
 
-    static parseList(ords: any) : Product[] {
-      let result : Product[] = [];
-
-      for(let ord of ords) {
-        result.push(new Product(ord));
-      }
-
-      return result;
-
-    }
-
     static parseList(prods: any) {
         let result : Product[] = [];
         for(let prod of prods) {
