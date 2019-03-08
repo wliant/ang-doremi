@@ -29,7 +29,10 @@
                                         <td>{{task.status}}</td>
                                         <!--<td>{{task.createdBy}}</td>-->
                                         <td>{{task.createdOn | date:'dd-MM-yyyy'}}</td>
-                                        <td><a *ngIf="task.status === 'Ready'" style="cursor: pointer;" (click)="startTask(task.id);"><img src="./assets/img/sharp-work-24px.svg" /></a></td>
+                                        <td>
+                                        <button *ngIf="task.status === 'Ready'" (click)="startTask(task.id);" mat-button class="btn btn-white btn-just-icon">
+                                            <i class="material-icons">work</i>
+                                        </button>
                                     </tr>
                                 </tbody>
                             </table>
