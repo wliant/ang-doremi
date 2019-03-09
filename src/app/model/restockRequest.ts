@@ -1,3 +1,5 @@
+import { Product } from '../model/product';
+
 export class RestockRequest {
     id: number;
     product: Product;

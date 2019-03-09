@@ -15,21 +15,23 @@ export class Product {
 
 
     constructor(prod: any) {
-        if(prod[modelName]) {
+        if(prod && prod[modelName]) {
             prod = prod[modelName];
         }
-        this.id = prod.id;
-        this.productCategory = prod.productCategory;
-        this.productTitle = prod.productTitle;
-        this.productAuthor = prod.productAuthor;
-        this.yearOfPublication = prod.yearOfPublication;
-        this.publisher = prod.publisher;
-        this.unitPrice = prod.unitPrice;
-        this.productDemand = prod.productDemand;
-        this.serviceLevel = prod.serviceLevel;
-        this.supplierLeadTime = prod.supplierLeadTime;
-        this.stockLevel = prod.stockLevel;
-        this.availableInventory = prod.availableInventory;
+        if(prod) {
+            this.id = prod.id;
+            this.productCategory = prod.productCategory;
+            this.productTitle = prod.productTitle;
+            this.productAuthor = prod.productAuthor;
+            this.yearOfPublication = prod.yearOfPublication;
+            this.publisher = prod.publisher;
+            this.unitPrice = prod.unitPrice;
+            this.productDemand = prod.productDemand;
+            this.serviceLevel = prod.serviceLevel;
+            this.supplierLeadTime = prod.supplierLeadTime;
+            this.stockLevel = prod.stockLevel;
+            this.availableInventory = prod.availableInventory;
+        }
 
     }
 

@@ -14,7 +14,7 @@ export class Order {
   orderItems?: OrderItem[];
 
   constructor(ord: any) { 
-    if(ord[modelName]) {
+    if(ord && ord[modelName]) {
       ord = ord[modelName];
     }
     this.id = ord.id;

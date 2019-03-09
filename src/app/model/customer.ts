@@ -7,7 +7,7 @@ export class Customer {
   creditRisk?: string;
 
   constructor(cus: any) {
-    if(cus[modelName]) {
+    if(cus && cus[modelName]) {
       cus = cus[modelName];
     }
     this.id = cus.id;
