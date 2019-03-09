@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 //refer to https://docs.jboss.org/jbpm/release/7.17.0.Final/jbpm-docs/html_single/#_jbpmtasklifecycle
 export const TASK_ACTIONS = {
   CLAIMED: "claimed",
-  STARTED: "started", 
+  STARTED: "started",
   RESUMED: "resumed",
   STOPPED: "stopped",
   SUSPENDED: "suspended",
@@ -40,11 +40,11 @@ export class KieService {
             map((response: any) => new TaskSummaryList(response)),
             tap(_ => this.log('fetched Tasks')),
             catchError(this.handleError('getTasks'))
-        );     
+        );
     }
 
     getTask(id:number) : Observable<any> {
-        const theUrl = `${this.url}/queries/tasks/instances/${id}`;
+        const theUrl = `${this.url}/queries/tasks/instances/process/${id}`;
         return this.http.get(theUrl);
     }
 
