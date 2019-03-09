@@ -12,6 +12,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/order-list', title: 'Order List',  icon:'list', class: '' },
     { path: '/task-list', title: 'Task List', icon:'content_paste', class: ''},
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: '/customer-list', title: 'Customer List', icon: 'list', class: '' },
     { path: '/login', title: 'Logout', icon: 'exit_to_app', class:''}
 ];
 

@@ -9,9 +9,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 
 @Component({
-  selector: 'app-add-customer-detail',
-  templateUrl: './add-customer-detail.component.html',
-  styleUrls: ['./add-customer-detail.component.scss']
+  selector: 'app-customer-detail',
+  templateUrl: './customer-detail.component.html',
+  styleUrls: ['./customer-detail.component.css']
 })
 export class CustomerDetailComponent implements OnInit {
   @Input() customer: Customer = new Customer({});

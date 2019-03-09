@@ -11,6 +11,8 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
 import { CustomerEvaluationComponent } from '../../customer-evaluation/customer-evaluation.component';
 import { OrderApprovalComponent } from '../../order-approval/order-approval.component';
 import { SupplierReorderComponent } from '../../supplier-reorder/supplier-reorder.component';
+import { CustomerListComponent } from '../../customer-component/customer-list.component';
+import { CustomerDetailComponent } from '../../customer-component/customer-detail.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'order-list',     component: OrderListComponent },
@@ -23,6 +25,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add-product-detail', component: AddProductDetailComponent },
     { path: 'customer-evaluation/:id', component: CustomerEvaluationComponent },
     { path: 'order-approval/:id', component: OrderApprovalComponent },
-    { path: 'supplier-reorder/:id', component: SupplierReorderComponent }
-
+    { path: 'supplier-reorder/:id', component: SupplierReorderComponent },
+    { path: 'customer-list', component: CustomerListComponent },
+    { path: 'customer-detail', component: CustomerDetailComponent }
 ];

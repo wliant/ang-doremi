@@ -14,6 +14,8 @@ import { ModalComponent } from '../../modal.component';
 import { CustomerEvaluationComponent } from '../../customer-evaluation/customer-evaluation.component';
 import { OrderApprovalComponent } from '../../order-approval/order-approval.component';
 import { SupplierReorderComponent } from '../../supplier-reorder/supplier-reorder.component';
+import { CustomerListComponent } from '../../customer-component/customer-list.component';
+import { CustomerDetailComponent } from '../../customer-component/customer-detail.component';
 
 import {
   MatButtonModule,
@@ -57,7 +59,9 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
     ProductDetailComponent,
     CustomerEvaluationComponent,
     OrderApprovalComponent,
-    SupplierReorderComponent
+    SupplierReorderComponent,
+    CustomerListComponent,
+    CustomerDetailComponent
   ]
 })
 
