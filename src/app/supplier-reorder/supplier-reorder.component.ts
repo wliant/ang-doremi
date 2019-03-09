@@ -48,7 +48,7 @@ import { catchError, map, tap } from 'rxjs/operators';
       }
 
       save(): void {
-          this.KieService.actOnTask(this.taskId, TASK_ACTIONS.COMPLETED, {"output": {"RestockRequest": this.restockRe})
+          this.KieService.actOnTask(this.taskId, TASK_ACTIONS.COMPLETED, {"output": {"RestockRequest": this.restockRe}})
             .subscribe(()=>this.goBack());
       }
 
