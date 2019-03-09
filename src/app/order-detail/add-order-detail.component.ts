@@ -78,6 +78,7 @@ export class AddOrderDetailComponent implements OnInit {
       sum = sum + oi.value;
     }
     this.order.orderValue = sum;
+    this.order.discountedValue = sum;
   }
 
   getCustomers(): void {
