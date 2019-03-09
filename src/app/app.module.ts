@@ -10,9 +10,6 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
-import { OrderListComponent } from './order-list/order-list.component';
-import { OrderDetailComponent } from './order-detail/order-detail.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
   AgmCoreModule
@@ -20,8 +17,6 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HttpConfigInterceptor} from './interceptor/httpconfig.interceptor';
 import { LoginComponent } from './login/login.component';
-
-import './modal.component.css';
 
 @NgModule({
   imports: [

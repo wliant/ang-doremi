@@ -10,7 +10,6 @@ import { ProductDetailComponent } from '../../product-detail/product-detail.comp
 import { TaskListComponent } from '../../task-list/task-list.component';
 import { AddOrderDetailComponent } from '../../order-detail/add-order-detail.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
-import { ModalComponent } from '../../modal.component';
 import { CustomerEvaluationComponent } from '../../customer-evaluation/customer-evaluation.component';
 import { OrderApprovalComponent } from '../../order-approval/order-approval.component';
 import { SupplierReorderComponent } from '../../supplier-reorder/supplier-reorder.component';
@@ -54,7 +53,6 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
     AddOrderDetailComponent,
     NotificationsComponent,
     TaskListComponent,
-    ModalComponent,
     ProductListComponent,
     AddProductDetailComponent,
     ProductDetailComponent,
