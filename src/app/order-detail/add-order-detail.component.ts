@@ -49,9 +49,11 @@ export class AddOrderDetailComponent implements OnInit {
     //this.productService.getProduct(this.selectedProductId).subscribe(
      // p => oi.product = p
     //);
-    this.productService.getProduct(this.selectedProductId).pipe(
-      tap(p => oi.product = p),
-      tap(_ => this.calculateOrderItemValue(oi))
+    this.productService.getProduct(this.selectedProductId).subscribe(
+      p => {
+        oi.product = p;
+        this.calculateOrderItemValue(oi)
+      }
     );
   }
 

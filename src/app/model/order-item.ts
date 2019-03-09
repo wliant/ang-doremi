@@ -8,7 +8,7 @@ export class OrderItem {
     value?: number;
 
     constructor(oi: any) {
-        if(oi[modelName]) {
+        if(oi && oi[modelName]) {
             oi = oi[modelName];
         }
         this.id = oi.id;
