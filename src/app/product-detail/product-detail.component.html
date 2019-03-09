@@ -23,8 +23,8 @@
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
                                       <mat-select placeholder="Category" [(ngModel)]="product.productCategory" required>
-                                          <mat-option value="Classical">Book</mat-option>
-                                          <mat-option value="Muic Score">Music Score</mat-option>
+                                          <mat-option value="Book">Book</mat-option>
+                                          <mat-option value="Music Score">Music Score</mat-option>
                                       </mat-select>
                                   </mat-form-field>
                               </div>
@@ -55,7 +55,7 @@
                                   </div>
                                   <div class="col-md-4">
                                       <mat-form-field class="example-full-width">
-                                          <input matInput placeholder="Available Inventory" [(ngModel)]="product.availableInventory" type=”number” step="1" no-float disabled>
+                                          <input matInput placeholder="Available Inventory" [(ngModel)]="product.availableInventory" type=”number” step="1" min="0" disabled>
                                       </mat-form-field>
                                   </div>
                               </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Order } from '../model/order';
 import { Customer } from '../model/customer';
-import { Product } from '../model/Product';
+import { Product } from '../model/product';
 import { ActivatedRoute } from '@angular/router';
 import { KieService } from '../services/kie.service';
 import { Location } from '@angular/common';
@@ -25,7 +25,7 @@ export class AddOrderDetailComponent implements OnInit {
   selectedProductId: number;
 
   constructor(
-    private orderService: OrderService, 
+    private orderService: OrderService,
     private customerService: CustomerService,
     private location: Location,
     private productService: ProductService,
