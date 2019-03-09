@@ -147,4 +147,8 @@ export class NavbarComponent implements OnInit {
       }
       return 'Dashboard';
     }
+
+    getUser(){
+      return JSON.parse(localStorage.getItem('currentUser')).username;
+    }
 }
