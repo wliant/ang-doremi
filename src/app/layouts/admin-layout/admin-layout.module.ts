@@ -21,6 +21,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ModalComponent } from '../../modal.component';
 import { CustomerEvaluationComponent } from '../../customer-evaluation/customer-evaluation.component';
 import { OrderApprovalComponent } from '../../order-approval/order-approval.component';
+import { SupplierReorderComponent } from '../../supplier-reorder/supplier-reorder.component';
 
 import {
   MatButtonModule,
@@ -71,7 +72,8 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
     AddProductDetailComponent,
     ProductDetailComponent,
     CustomerEvaluationComponent,
-    OrderApprovalComponent
+    OrderApprovalComponent,
+    SupplierReorderComponent
   ]
 })
 
