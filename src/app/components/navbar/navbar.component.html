@@ -22,15 +22,22 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#pablo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons">notifications</i>
-                        <span class="notification">3</span>
+                        <span class="notification">{{ notifications.length }}</span>
                         <p>
                             <span class="d-lg-none d-md-block">Some Actions</span>
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Coming Soon</a>
-                        <a class="dropdown-item" href="#">Akan Datang</a>
-                        <a class="dropdown-item" href="#">拭目以待</a>
+                        <div *ngIf="notifications.length > 0">
+                            <a *ngFor="let noti of notifications"class="dropdown-item" (click)="clickNotification(noti)">
+                                {{ noti.message }}}
+                            </a>
+                        </div>
+                        <div *ngIf="notifications.length == 0">
+                            <span class="dropdown-item" href="#">
+                                No new notification
+                            </span>
+                        </div>
                     </div>
                 </li>
                 <li class="nav-item">
