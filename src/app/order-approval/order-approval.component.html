@@ -30,10 +30,20 @@
                                         </mat-form-field>
                                     </div>
                                     <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Credit Risk" [(ngModel)]="order.customer.creditRisk" disabled>
+                                        </mat-form-field>
                                     </div>
                                     <div class="col-md-4">
                                         <mat-form-field class="example-full-width">
                                             <input matInput placeholder="Country" [(ngModel)]="order.country" disabled>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Address" [(ngModel)]="order.customer.address" disabled>
                                         </mat-form-field>
                                     </div>
                                 </div>

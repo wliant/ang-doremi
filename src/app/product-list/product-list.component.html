@@ -52,7 +52,11 @@
                                             <td>{{product.publisher}}</td>
                                             <td>{{product.unitPrice | number}}</td>
                                             <td>{{product.availableInventory}}</td>
-                                            <td align="right"><a routerLink="/product-detail/{{product.id}}"><img class="img" src="./assets/img/view.svg" /></a></td>
+                                            <td align="right">
+                                                <button routerLink="/product-detail/{{product.id}}" mat-button class="btn btn-white btn-just-icon">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
