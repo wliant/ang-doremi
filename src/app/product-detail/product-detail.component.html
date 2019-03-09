@@ -17,9 +17,47 @@
                               </div>
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Product Title" [(ngModel)]="product.productTitle" name="productTitle" disabled>
+                                    <input matInput placeholder="Product Title" [(ngModel)]="product.productTitle" name="productTitle" required>
                                   </mat-form-field>
                               </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                      <mat-select placeholder="Category" [(ngModel)]="product.productCategory" required>
+                                          <mat-option value="Book">Book</mat-option>
+                                          <mat-option value="Music Score">Music Score</mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                              </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-4">
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Author" [(ngModel)]="product.productAuthor" required>
+                                      </mat-form-field>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Year of Publication" [(ngModel)]="product.yearOfPublication" required>
+                                      </mat-form-field>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Unit Price" [(ngModel)]="product.unitPrice" type="number" required>
+                                      </mat-form-field>
+                                  </div>
+                                  </div>
+                                  <div class="row">
+                                  <div class="col-md-4">
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Publisher" [(ngModel)]="product.publisher" required>
+                                      </mat-form-field>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Available Inventory" [(ngModel)]="product.availableInventory" type=”number” step="1" min="0" disabled>
+                                      </mat-form-field>
+                                  </div>
                               </div>
                               <div class="row">
                               <div class="col-md-4">
