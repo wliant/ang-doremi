@@ -13,6 +13,7 @@ import { OrderApprovalComponent } from '../../order-approval/order-approval.comp
 import { SupplierReorderComponent } from '../../supplier-reorder/supplier-reorder.component';
 import { CustomerListComponent } from '../../customer-component/customer-list.component';
 import { CustomerDetailComponent } from '../../customer-component/customer-detail.component';
+import { AddCustomerDetailComponent } from '../../customer-component/add-customer-detail.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'order-list',     component: OrderListComponent },
@@ -27,5 +28,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'order-approval/:id', component: OrderApprovalComponent },
     { path: 'supplier-reorder/:id', component: SupplierReorderComponent },
     { path: 'customer-list', component: CustomerListComponent },
-    { path: 'customer-detail', component: CustomerDetailComponent }
+    { path: 'customer-detail/:id', component: CustomerDetailComponent },
+    { path: 'add-customer-detail', component: AddCustomerDetailComponent }
 ];

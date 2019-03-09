@@ -16,6 +16,7 @@ import { OrderApprovalComponent } from '../../order-approval/order-approval.comp
 import { SupplierReorderComponent } from '../../supplier-reorder/supplier-reorder.component';
 import { CustomerListComponent } from '../../customer-component/customer-list.component';
 import { CustomerDetailComponent } from '../../customer-component/customer-detail.component';
+import { AddCustomerDetailComponent } from '../../customer-component/add-customer-detail.component';
 
 import {
   MatButtonModule,
@@ -61,7 +62,8 @@ import { AddProductDetailComponent } from 'src/app/product-detail/add-product-de
     OrderApprovalComponent,
     SupplierReorderComponent,
     CustomerListComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    AddCustomerDetailComponent
   ]
 })
 

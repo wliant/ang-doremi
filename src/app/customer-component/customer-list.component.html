@@ -1,0 +1,46 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title ">Customer List</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body">
+                              <button routerLink="/add-customer-detail" mat-button class="btn btn-grey">
+                                  <i class="material-icons">add</i>
+                                  Create New
+                              </button>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                        <th>Customer No.</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Credit Risk</th>
+                                        <th></th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let customer of customers">
+                                          <td>{{customer.id}}</td>
+                                          <td>{{customer.name}}</td>
+                                          <td>{{customer.address}}</td>
+                                          <td>{{customer.creditRisk}}</td>
+                                          <td align="right">
+                                              <button routerLink="/customer-detail/{{customer.id}}" mat-button class="btn btn-white btn-just-icon">
+                                                  <i class="material-icons">zoom_in</i>
+                                              </button>
+                                          </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      

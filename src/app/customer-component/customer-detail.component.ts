@@ -14,23 +14,22 @@ import { catchError, map, tap } from 'rxjs/operators';
   styleUrls: ['./customer-detail.component.css']
 })
 export class CustomerDetailComponent implements OnInit {
-  @Input() customer: Customer = new Customer({});
-  customers: Customer[];
+  customer: Customer = new Customer({});
 
   constructor(
+    private route: ActivatedRoute,
     private customerService: CustomerService,
-    private location: Location,
-    private productService: ProductService,
-    private kieService: KieService
+    private location: Location
   ) { }
 
   ngOnInit() {
-    this.getCustomers();
+    this.getCustomer();
   }
 
-  getCustomers(): void {
-    this.customerService.getCustomers()
-      .subscribe(cuss => this.customers = cuss);
+  getCustomer(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.customerService.getCustomer(id)
+      .subscribe(ord => this.customer = ord);
   }
 
   goBack(): void {
