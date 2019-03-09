@@ -1,5 +1,6 @@
 import { Product } from './product';
 
+const modelName = "com.thesundaylunatics.model.OrderLineItem";
 export class OrderItem {
     id?: number;
     product?: Product;
@@ -7,6 +8,9 @@ export class OrderItem {
     value?: number;
 
     constructor(oi: any) {
+        if(oi[modelName]) {
+            oi = oi[modelName];
+        }
         this.id = oi.id;
         if(oi.product) {
             this.product = new Product(oi.product);

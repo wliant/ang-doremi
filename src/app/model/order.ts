@@ -1,6 +1,7 @@
 import { Customer } from './customer'
 import { OrderItem } from './order-item'
 
+const modelName = "com.thesundaylunatics.model.Order";
 export class Order {
   id?: number;
   orderDate?: Date;
@@ -13,6 +14,9 @@ export class Order {
   orderItems?: OrderItem[];
 
   constructor(ord: any) { 
+    if(ord[modelName]) {
+      ord = ord[modelName];
+    }
     this.id = ord.id;
     if(ord.orderDate) {
       this.orderDate = new Date(ord.orderDate);

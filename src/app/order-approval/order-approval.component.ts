@@ -1,10 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CustomerEvaluation } from '../kie-model/customer-evaluation';
 import { KieService, TASK_ACTIONS } from '../services/kie.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Customer } from '../model/customer';
-import { TaskSummary } from '../kie-model/task-summary';
+import { Order } from '../model/order';
 import { catchError, map, tap } from 'rxjs/operators';
 
 @Component({
@@ -13,10 +11,8 @@ import { catchError, map, tap } from 'rxjs/operators';
     styleUrls: ['./order-approval.component.css']
   })
   export class OrderApprovalComponent implements OnInit {
-      customer : Customer;
-      ce: CustomerEvaluation = new CustomerEvaluation();
-      @Input() taskSummary: TaskSummary;
-      
+      order: Order;
+      taskId: number;      
 
       constructor(
           private route: ActivatedRoute,
@@ -26,20 +22,42 @@ import { catchError, map, tap } from 'rxjs/operators';
 
       }
       ngOnInit(): void {
-        this.getCustomer();
+        this.getInput();
       }
 
-      getCustomer(): void {
-          this.KieService.getTaskInput(this.taskSummary.id).pipe(
-            map((response: any) => this.customer = response.input["com.thesundaylunatics.model.Customer"])
-          );
+      getInput(): void {
+        this.taskId = +this.route.snapshot.paramMap.get('id');
+
+        this.KieService.getTaskInput(this.taskId).subscribe(
+          (response: any) => {
+            console.log(JSON.stringify(response));
+            let c = new Order(response.input["com.thesundaylunatics.model.Order"]);
+            this.order = c;
+          }
+        )
       }
 
-      save(): void {
-          this.KieService.actOnTask(this.taskSummary.id, TASK_ACTIONS.COMPLETED, {"output": {"CustomerEvaluation": this.ce}})
-            .subscribe(()=>this.goBack());
-          //this.productService.addProduct(this.product).subscribe(() => this.goBack());
+      approve(): void {
+          this.order.status = "Approved";
+          this.KieService.actOnTask(
+            this.taskId, 
+            TASK_ACTIONS.COMPLETED, 
+            {
+              "output": {"Order": this.order
+            }
+          }).subscribe(()=>this.goBack());
       }
+
+      reject(): void {
+        this.order.status = "Rejected";
+        this.KieService.actOnTask(
+          this.taskId, 
+          TASK_ACTIONS.COMPLETED, 
+          {
+            "output": {"Order": this.order
+          }
+        }).subscribe(()=>this.goBack());
+    }
 
       goBack(): void {
           this.location.back();

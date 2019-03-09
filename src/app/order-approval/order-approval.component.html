@@ -1,0 +1,105 @@
+<div *ngIf="order">
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Order Detail</h4>
+                                <p class="card-category"></p>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Order No." [(ngModel)]="order.id" disabled>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                        <input matInput [matDatepicker]="picker" placeholder="Order Date" [(ngModel)]="order.orderDate" disabled>
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Customer" [(ngModel)]="order.customer.name" disabled>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Country" [(ngModel)]="order.country" disabled>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead class=" text-primary">
+                                                            <th>Product</th>
+                                                            <th>Quantity</th>
+                                                            <th>Value ($)</th>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let orderItem of order.orderItems">
+                                                                <td>{{ orderItem.product.productTitle }}</td>
+                                                                <td>{{ orderItem.quantity }}</td>
+                                                                <td>{{ orderItem.value | number : '1.2-2' }}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Order Value ($): </label> {{ order.orderValue | number : '1.2-2' }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Order Discount (%): </label> {{ order.orderDiscount | percent }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Discounted Value ($): </label> {{ order.discountedValue | number : '1.2-2' }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button mat-raised-button (click)="approve();" class="btn btn-danger pull-left">Approve</button>
+                                        <button mat-raised-button (click)="reject();" class="btn btn-danger pull-left">Reject</button>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
