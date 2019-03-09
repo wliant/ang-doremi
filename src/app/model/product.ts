@@ -1,3 +1,4 @@
+const modelName = "com.thesundaylunatics.model.Product";
 export class Product {
     id: number;
     productCategory: string;
@@ -14,6 +15,9 @@ export class Product {
 
 
     constructor(prod: any) {
+        if(prod[modelName]) {
+            prod = prod[modelName];
+        }
         this.id = prod.id;
         this.productCategory = prod.productCategory;
         this.productTitle = prod.productTitle;

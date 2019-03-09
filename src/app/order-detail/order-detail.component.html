@@ -6,10 +6,15 @@
                     <div class="card">
                         <div class="card-header card-header-danger">
                             <h4 class="card-title">Order Detail</h4>
-                            <p class="card-category">Subtitle here</p>
+                            <p class="card-category"></p>
                         </div>
                         <div class="card-body">
                             <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Order No." [(ngModel)]="order.id" disabled>
+                                    </mat-form-field>
+                                </div>
                                 <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
                                     <input matInput [matDatepicker]="picker" placeholder="Order Date" [(ngModel)]="order.orderDate" disabled>
@@ -84,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-12">
                                     <button mat-raised-button (click)="goBack();" class="btn btn-danger pull-left">Back</button>
                                 </div>
                             </div>

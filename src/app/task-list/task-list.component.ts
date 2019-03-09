@@ -48,6 +48,10 @@ export class TaskListComponent implements OnInit {
     }else if(theTask.name == "Supplier Reorder Approval"){
       this.router.navigate([`/supplier-reorder/${taskId}`]);
     }
+
+    if(theTask.name == "Final Approval") {
+      this.router.navigate([`/order-approval/${taskId}`]);
+    }
   }
 
 }

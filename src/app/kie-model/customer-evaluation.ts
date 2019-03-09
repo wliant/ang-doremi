@@ -3,7 +3,7 @@ export class CustomerEvaluation{
     debtPayingAbility?: string;
     defaulter?: boolean;
     latePaymentInd?: boolean;
-    liquidity?: boolean;
+    liquidity?: string;
     ltv?: number;
     newCustomer?: boolean;
     operationAbility?: string;

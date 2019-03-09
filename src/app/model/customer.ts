@@ -1,3 +1,4 @@
+const modelName = "com.thesundaylunatics.model.Customer";
 export class Customer {
   id?: number;
   name?: string;
@@ -6,8 +7,9 @@ export class Customer {
   creditRisk?: string;
 
   constructor(cus: any) {
-    console.log("call constructor");
-    console.log(JSON.stringify(cus));
+    if(cus[modelName]) {
+      cus = cus[modelName];
+    }
     this.id = cus.id;
     this.name = cus.name;
     this.address = cus.address;

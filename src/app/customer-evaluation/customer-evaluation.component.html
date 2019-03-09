@@ -62,31 +62,90 @@
                                                 </mat-select>
                                             </mat-form-field>
                                         </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="No. of year active" [(ngModel)]="ce.yearsActive">
+                                            </mat-form-field>
+                                        </div>
                                     </div>
-                                </div>
+
                                 <div class="row">
                                     <div class="col-md-4">
                                         <mat-form-field class="example-full-width">
-                                            <mat-select placeholder="Is Customer New?" [(ngModel)]="ce.newCustomer">
+                                            <mat-select placeholder="Had customer defaulted before?" [(ngModel)]="ce.defaulter">
+                                                <mat-option [value]="true">YES</mat-option>
+                                                <mat-option [value]="false">NO</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-select placeholder="Did customer had late payment before" [(ngModel)]="ce.latePaymentInd">
                                                 <mat-option [value]="true">YES</mat-option>
                                                 <mat-option [value]="false">NO</mat-option>
                                             </mat-select>
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <!--
-                                    customerID?: number;
-                                    debtPayingAbility?: string;
-                                    defaulter?: boolean;
-                                    latePaymentInd?: boolean;
-                                    liquidity?: boolean;
-                                    ltv?: number;
-                                    newCustomer?: boolean;
-                                    operationAbility?: string;
-                                    profitability?: string;
-                                    purchaseFreq?: string;
-                                    yearsActive?: number;
-                                -->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-select placeholder="Customer Liquidity" [(ngModel)]="ce.liquidity">
+                                                <mat-option [value]="'Low'">Low</mat-option>
+                                                <mat-option [value]="'Medium'">Medium</mat-option>
+                                                <mat-option [value]="'High'">High</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-select placeholder="Customer Debt Paying Ability" [(ngModel)]="ce.debtPayingAbility">
+                                                <mat-option [value]="'Low'">Low</mat-option>
+                                                <mat-option [value]="'Medium'">Medium</mat-option>
+                                                <mat-option [value]="'High'">High</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-select placeholder="Customer Operation Ability" [(ngModel)]="ce.operationAbility">
+                                                <mat-option [value]="'Low'">Low</mat-option>
+                                                <mat-option [value]="'Medium'">Medium</mat-option>
+                                                <mat-option [value]="'High'">High</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-select placeholder="Customer Profitability" [(ngModel)]="ce.profitability">
+                                                <mat-option [value]="'Low'">Low</mat-option>
+                                                <mat-option [value]="'Medium'">Medium</mat-option>
+                                                <mat-option [value]="'High'">High</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-select placeholder="Customer Purchase Frequency" [(ngModel)]="ce.purchaseFreq">
+                                                <mat-option [value]="'Low'">Low</mat-option>
+                                                <mat-option [value]="'Medium'">Medium</mat-option>
+                                                <mat-option [value]="'High'">High</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Customer LTV" [(ngModel)]="ce.ltv">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
