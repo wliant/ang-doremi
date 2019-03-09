@@ -29,16 +29,22 @@ import { catchError, map, tap } from 'rxjs/operators';
       }
 
       getInput(): void {
+        
           this.taskId = +this.route.snapshot.paramMap.get('id');
-          this.KieService.getTaskInput(this.taskId).pipe(
-            map((response: any) => this.customer = response.input["com.thesundaylunatics.model.Customer"])
-          );
+
+          this.KieService.getTaskInput(this.taskId).subscribe(
+            (response: any) => {
+              console.log(JSON.stringify(response));
+              let c = new Customer(response.input["com.thesundaylunatics.model.Customer"]);
+              this.customer = c;
+              this.ce.customerID = this.customer.id;
+            }
+          )
       }
 
       save(): void {
           this.KieService.actOnTask(this.taskId, TASK_ACTIONS.COMPLETED, {"output": {"CustomerEvaluation": this.ce}})
             .subscribe(()=>this.goBack());
-          //this.productService.addProduct(this.product).subscribe(() => this.goBack());
       }
 
       goBack(): void {

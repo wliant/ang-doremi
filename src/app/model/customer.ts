@@ -6,6 +6,8 @@ export class Customer {
   creditRisk?: string;
 
   constructor(cus: any) {
+    console.log("call constructor");
+    console.log(JSON.stringify(cus));
     this.id = cus.id;
     this.name = cus.name;
     this.address = cus.address;

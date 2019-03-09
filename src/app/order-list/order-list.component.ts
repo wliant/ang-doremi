@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../services/order.service';
 import { Order } from '../model/order';
-import { ModalService } from '../services/modal.service';
 import { KieService } from '../services/kie.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { KieService } from '../services/kie.service';
 export class OrderListComponent implements OnInit {
 
   orders : Order[];
-  constructor(private orderService: OrderService, private modalService: ModalService, private kieService: KieService) { }
+  constructor(private orderService: OrderService, private kieService: KieService) { }
 
   addOrder(): void {
 
@@ -26,10 +25,4 @@ export class OrderListComponent implements OnInit {
   ngOnInit() {
     this.getOrders();
   }
-
-  openModal(id: string) {
-    console.log("openModal called");
-    this.modalService.open(id);
-  }
-
 }

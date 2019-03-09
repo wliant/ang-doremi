@@ -8,8 +8,6 @@
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body">
-                        <a routerLink="/add-order-detail"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Create New</a>
-                        <a (click)="openModal('custom-modal-2');"><img class="img" src="./assets/img/sharp-add_box-24px.svg" />Open Modal</a>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
@@ -31,6 +29,9 @@
                                         <td>{{task.createdOn | date:'dd-MM-yyyy'}}</td>
                                         <td>
                                         <button *ngIf="task.status === 'Ready'" (click)="startTask(task.id);" mat-button class="btn btn-white btn-just-icon">
+                                            <i class="material-icons">work</i>
+                                        </button>
+                                        <button *ngIf="task.status === 'InProgress'" (click)="workOnTask(task.id);" mat-button class="btn btn-white btn-just-icon">
                                             <i class="material-icons">work</i>
                                         </button>
                                     </tr>

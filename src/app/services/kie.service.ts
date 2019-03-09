@@ -15,7 +15,7 @@ export const TASK_ACTIONS = {
   DELEGATED: "delegated",
   RELEASED: "released",
   FAILED: "failed",
-  COMPLETED: "git",
+  COMPLETED: "completed",
   ACTIVATED: "activated",
   FORWARDED: "forwarded"
 };
@@ -49,7 +49,9 @@ export class KieService {
     }
 
     getTaskInput(id:number): Observable<any> {
+      //http://localhost:8090/rest/server/containers/DoReMi-kjar_1.0-SNAPSHOT/tasks/2/contents/input
         const theUrl = `${this.url}/containers/${containerId}/tasks/${id}/contents/input`;
+        console.log(theUrl);
         return this.http.get(theUrl);
     }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskSummary } from '../kie-model/task-summary';
 import { KieService, TASK_ACTIONS } from '../services/kie.service';
-
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -11,7 +11,7 @@ import { KieService, TASK_ACTIONS } from '../services/kie.service';
 export class TaskListComponent implements OnInit {
 
   tasks : TaskSummary[];
-  constructor(private kieService: KieService) { }
+  constructor(private kieService: KieService,private router: Router) { }
 
   getTasks(): void {
     this.kieService.getTasks().subscribe(tsl => this.tasks = tsl.taskSummary);
@@ -27,11 +27,25 @@ export class TaskListComponent implements OnInit {
         _ => {
             this.kieService.actOnTask(taskId, TASK_ACTIONS.STARTED).subscribe(
                 _ => {
-                    this.getTasks();
+                  this.workOnTask(taskId);
                 }
             )
         }
     );
+  }
+
+  workOnTask(taskId: number) {
+    let theTask: TaskSummary;
+
+    for(let t of this.tasks) {
+      if(t.id == taskId) {
+        theTask = t;
+      }
+    }
+
+    if(theTask.name == "Customer Evaluation Task") {
+      this.router.navigate([`/customer-evaluation/${taskId}`]);
+    }
   }
 
 }
