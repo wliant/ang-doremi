@@ -10,18 +10,9 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
 import { OrderListComponent } from './order-list/order-list.component';
-import { ApprovedOrderListComponent } from './approved-order-list/approved-order-list.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
   AgmCoreModule

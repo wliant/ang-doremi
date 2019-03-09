@@ -38,6 +38,6 @@ export class ProductDetailComponent implements OnInit {
     console.log(this.product);
       this.productService.updateProduct(this.product);
        this.kieService.submitProcess("DoReMi-kjar.InventoryRestockProcess",{"product": {"Product": this.product}})
-      .subscribe(()=> this.goBack());
+      .subscribe(()=>this.goBack());
   }
 }
