@@ -17,29 +17,58 @@
                               </div>
                               <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Product Demand" [(ngModel)]="product.productDemand" name="productDemand">
+                                    <input matInput placeholder="Product Title" [(ngModel)]="product.productTitle" name="productTitle" disabled>
+                                  </mat-form-field>
+                              </div>
+                              </div>
+                              <div class="row">
+                              <div class="col-md-4">
+                                Product Demand
+                                  <mat-form-field>
+                                    <mat-select [(value)]="product.productDemand">
+                                      <mat-option value="High">High</mat-option>
+                                      <mat-option value="Low">Low</mat-option>
+                                      <mat-option value="Medium">Medium</mat-option>
+                                    </mat-select>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-4">
+                                Service Level
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Service Level" [(ngModel)]="product.serviceLevel" name="serviceLevel">
+                                    <mat-select [(value)]="product.serviceLevel">
+                                      <mat-option value="High">High</mat-option>
+                                      <mat-option value="Low">Low</mat-option>
+                                      <mat-option value="Medium">Medium</mat-option>
+                                    </mat-select>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-4">
+                                Supplier Lead Time
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Supplier Lead Time" [(ngModel)]="product.supplierLeadTime" name="supplierLeadTime">
+                                    <mat-select [(value)]="product.supplierLeadTime">
+                                      <mat-option value="Long">Long</mat-option>
+                                      <mat-option value="Short">Short</mat-option>
+                                      <mat-option value="Moderate">Moderate</mat-option>
+                                    </mat-select>
                                   </mat-form-field>
                               </div>
                               <div class="col-md-4">
+                                Stock Level
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Stock Level" [(ngModel)]="product.stockLevel" name="stockLevel">
+                                    <mat-select [(value)]="product.stockLevel">
+                                      <mat-option value="High">High</mat-option>
+                                      <mat-option value="Low">Low</mat-option>
+                                      <mat-option value="Medium">Medium</mat-option>
+                                    </mat-select>
                                   </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-4">
-                                  <button mat-raised-button (click)="save()"class="btn btn-danger pull-left">Save</button>
-                                  <button mat-raised-button (click)="goBack()"class="btn btn-danger pull-left">Back</button>
+                                <button mat-raised-button (click)="save()"class="btn btn-danger pull-left">Save</button>
+                              </div>
+                              <div class="col-md-4">
+                                <button mat-raised-button (click)="goBack()"class="btn btn-danger pull-left">Back</button>
                               </div>
                           </div>
                           <div class="clearfix"></div>

@@ -18,6 +18,7 @@ import { TaskListComponent } from '../../task-list/task-list.component';
 import { AddProductDetailComponent } from 'src/app/product-detail/add-product-detail.component';
 import { CustomerEvaluationComponent } from '../../customer-evaluation/customer-evaluation.component';
 import { OrderApprovalComponent } from '../../order-approval/order-approval.component';
+import { SupplierReorderComponent } from '../../supplier-reorder/supplier-reorder.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -79,5 +80,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'product-detail/:id',   component: ProductDetailComponent },
     { path: 'add-product-detail', component: AddProductDetailComponent },
     { path: 'customer-evaluation/:id', component: CustomerEvaluationComponent },
-    { path: 'order-approval/:id', component: OrderApprovalComponent }
+    { path: 'order-approval/:id', component: OrderApprovalComponent },
+    { path: 'supplier-reorder/:id', component: SupplierReorderComponent }
+
 ];

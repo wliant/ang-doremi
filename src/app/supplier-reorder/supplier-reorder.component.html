@@ -1,0 +1,78 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Supplier Reorder</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div *ngIf="product" class="card">
+                                  <div class="card-header card-header-rose">
+                                      <h4 class="card-title">Product</h4>
+                                  </div>
+                                  <div class="card-body">
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="id" [(ngModel)]="product.id" disabled>
+                                          </mat-form-field>
+                                      </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="productTitle" [(ngModel)]="product.productTitle" disabled>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Original Available Inventory" [(ngModel)]="product.availableInventory" disabled>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                            <div *ngIf="restockRe" class="card">
+                                <div class="card-header card-header-rose">
+                                    <h4 class="card-title">Restock Request</h4>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                          <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="id" [(ngModel)]="restockRe.id" disabled>
+                                          </mat-form-field>
+                                      </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="quantity" [(ngModel)]="restockRe.quantity" disabled>
+                                        </mat-form-field>
+                                    </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <button mat-raised-button (click)="save();" class="btn btn-danger pull-left">OK</button>
+                          </div>
+                          <div class="col-md-4">
+                          <button mat-raised-button (click)="goBack();" class="btn btn-danger pull-left">Back</button>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
