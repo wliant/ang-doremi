@@ -46,9 +46,6 @@ export class AddOrderDetailComponent implements OnInit {
   }
 
   setOrderItemProduct(oi: OrderItem): void {
-    //this.productService.getProduct(this.selectedProductId).subscribe(
-     // p => oi.product = p
-    //);
     this.productService.getProduct(this.selectedProductId).subscribe(
       p => {
         oi.product = p;
